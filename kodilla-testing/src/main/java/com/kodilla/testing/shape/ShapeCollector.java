@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ShapeCollector {
     private static int shapeCounter = 0;
-    ArrayList<Shape> shapes = new ArrayList<>();
+    private ArrayList<Shape> shapes = new ArrayList<>();
 
     public ShapeCollector() {}
 

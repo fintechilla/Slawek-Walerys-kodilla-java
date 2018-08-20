@@ -16,10 +16,10 @@ public class CollectionTestSuite {
     public static void beforeClass(){
         System.out.println("Test suite: begin");
     }
-    @AfterClass
-    public static void afterClass(){
-        System.out.println("Test suite: end");
-    }
+//    @AfterClass
+//    public static void afterClass(){
+//        System.out.println("Test suite: end");
+//    }
 
     @Test
     public void testOddNumbersExterminatorEmptyList(){
@@ -63,8 +63,6 @@ public class CollectionTestSuite {
         for(int i = 0; i < resultLen; i++){
             resultTab[i] = result .get(i);
         }
-
-
         //Then
         Assert.assertArrayEquals(evenTab, resultTab);
     }

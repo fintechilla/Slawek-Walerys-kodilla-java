@@ -40,7 +40,7 @@ public class ShapeTestSuite {
         Assert.assertEquals(1, shapes.getShapesQuantity());
     }
     @Test //Test 2 - insert a figure, then remove it , are they the same?
-    public void testGetFigure(){
+    public void testRemoveFigure(){
         //Given
         ShapeCollector shapes;
         shapes = new ShapeCollector();
@@ -49,9 +49,11 @@ public class ShapeTestSuite {
         //When
         shapes.addFigure(square);
         boolean result = shapes.removeFigure(square);
+        int resultSize = shapes.getShapesQuantity();
 
         //Then
         Assert.assertTrue(result);
+        Assert.assertEquals(0, resultSize);
     }
     @Test //Test 3 - will remove a non-existing post give false
     public void testRemoveShapeNonExistent(){
@@ -63,8 +65,24 @@ public class ShapeTestSuite {
 
         //When
         boolean result = shapes.removeFigure(triangle);
+        int resultSize = shapes.getShapesQuantity();
 
         //Then
         Assert.assertFalse(result);
+        Assert.assertEquals(1,resultSize);
+    }
+    @Test //Test 4 - pobieranie elementu by index
+    public void testGetShapeByIndex(){
+        //Given
+        Square square = new Square(23.0);
+        Shape triangle = new Triangle(15.1);
+        ShapeCollector shapes = new ShapeCollector();
+        shapes.addFigure(square);
+
+        //When
+        Shape result = shapes.getFigure(0);
+
+        //Then
+        Assert.assertEquals(square,result);
     }
 }
