@@ -16,10 +16,7 @@ public class CollectionTestSuite {
     public static void beforeClass(){
         System.out.println("Test suite: begin");
     }
-//    @AfterClass
-//    public static void afterClass(){
-//        System.out.println("Test suite: end");
-//    }
+
 
     @Test
     public void testOddNumbersExterminatorEmptyList(){
@@ -45,26 +42,17 @@ public class CollectionTestSuite {
             allNumList.add(i+1);
         }
         //initialize a list of even integers from 1..n
-        for(int i = 0; i < n; i++){
-            if((i+1) % 2 == 0){
-                evenNumList.add(i+1);
+        for(Integer num:allNumList){
+            if(num % 2 == 0){
+                evenNumList.add(num);
             }
         }
-        int evenLen = evenNumList.size();
-        int[] evenTab = new int[evenLen];
-        for(int i = 0; i < evenLen; i++){
-            evenTab[i] = evenNumList.get(i);
-        }
+
         //When
         ArrayList<Integer> result = exterminator.exterminate(allNumList);
-        System.out.println("Testing " + result);
-        int resultLen = result.size();
-        int[] resultTab = new int[resultLen];
-        for(int i = 0; i < resultLen; i++){
-            resultTab[i] = result .get(i);
-        }
+
         //Then
-        Assert.assertArrayEquals(evenTab, resultTab);
+        Assert.assertEquals(evenNumList, result);
     }
 
 }
