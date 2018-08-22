@@ -1,4 +1,4 @@
 package com.kodilla.testing.library;
 
-public interface LibaryDatabase {
+public class BookLibrary {
 }
