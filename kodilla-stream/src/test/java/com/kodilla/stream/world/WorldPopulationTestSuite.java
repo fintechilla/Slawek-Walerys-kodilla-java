@@ -12,7 +12,7 @@ public class WorldPopulationTestSuite {
     public void testWorldPopulationQuantity() {
         //Given
         List<Country> countryList = new ArrayList<>();
-        Continent europe = new Continent(countryList);
+        Continent europe = new Continent();
 
         Country england = new Country("85000000");
         europe.addCountry(england);
@@ -24,7 +24,7 @@ public class WorldPopulationTestSuite {
         Country poland = new Country("38000000");
         europe.addCountry(poland);
 
-        Continent america = new Continent(countryList);
+        Continent america = new Continent();
 
         Country unitedStates = new Country("330000000");
         america.addCountry(unitedStates);
@@ -38,17 +38,17 @@ public class WorldPopulationTestSuite {
 
         World world = new World();
         List<Continent>continentList = new ArrayList<>();
-//        world.addContinent(europe);
-//        world.addContinent(america);
+        world.addContinent(europe);
+        world.addContinent(america);
         continentList.add(europe);
         continentList.add(america);
 
         //When
-        BigDecimal totalPopulation = world.getPeopleQuantity(continentList);
+        BigDecimal totalPopulation = world.getPeopleQuantity();
 
 //        System.out.println(totalPopulation);
         //Then
-        BigDecimal expectedPopulation = new BigDecimal("2006000000");
+        BigDecimal expectedPopulation = new BigDecimal("1003000000");
         Assert.assertEquals(expectedPopulation, totalPopulation);
 
     }
