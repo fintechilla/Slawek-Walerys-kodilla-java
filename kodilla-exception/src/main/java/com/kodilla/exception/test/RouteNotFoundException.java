@@ -5,4 +5,8 @@ public class RouteNotFoundException extends Exception{
         super(message);
         System.out.println("Message: Try another city");
     }
+
+    public RouteNotFoundException() {
+
+    }
 }

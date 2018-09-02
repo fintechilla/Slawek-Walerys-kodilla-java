@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FlightSimulator {
-    public static Flight findFlight(Flight flight) {
+    public static boolean findFlight(Flight flight) {
         HashMap<String, Boolean> airportMap = new HashMap<String, Boolean>();
         airportMap.put("Warsaw", true);
         airportMap.put("London", true);
@@ -12,19 +12,22 @@ public class FlightSimulator {
         airportMap.put("Chicago", true);
         airportMap.put("Bath", false);
 
-        Flight result = new Flight();
+        boolean result = false;
         //Searching for a Departure Airport
         for (Map.Entry<String, Boolean> entry : airportMap.entrySet()) {
             if (entry.getKey().equals(flight.getDepartureAirport()) && entry.getValue()) {
-                //departureAirportExists = true;
-                result.setDepartureAirport(entry.getKey());
+                result = true;
             }
         }
+
         //Searching for an Arrival Airport
-        for (Map.Entry<String, Boolean> entry : airportMap.entrySet()) {
-            if (entry.getKey().equals(flight.getArrivalAirport()) && entry.getValue()) {
-                //arrivalAirportExists= true;
-                result.setArrivalAirport(entry.getKey());
+        if (result) {
+            result = false;
+            for (Map.Entry<String, Boolean> entry : airportMap.entrySet()) {
+                if (entry.getKey().equals(flight.getArrivalAirport()) && entry.getValue()) {
+                    //arrivalAirportExists= true;
+                    result = true;
+                }
             }
         }
         return result;
