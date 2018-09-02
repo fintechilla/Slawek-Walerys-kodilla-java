@@ -7,8 +7,7 @@ public class MovieStoreProcessor {
     public static void main(String[] args) {
         System.out.println(MovieStore.getMovies().entrySet().stream()
                 .flatMap(m->m.getValue().stream())
-                .map(n->n + "!")
-                .collect(Collectors.joining("","","")));
+                .collect(Collectors.joining("!","!","!")));
 
     }
 }
