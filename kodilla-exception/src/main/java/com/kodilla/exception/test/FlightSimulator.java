@@ -1,7 +1,6 @@
 package com.kodilla.exception.test;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class FlightSimulator {
     public static boolean findFlight(Flight flight) {
@@ -13,21 +12,17 @@ public class FlightSimulator {
         airportMap.put("Bath", false);
 
         boolean result = false;
-        //Searching for a Departure Airport
-        for (Map.Entry<String, Boolean> entry : airportMap.entrySet()) {
-            if (entry.getKey().equals(flight.getDepartureAirport()) && entry.getValue()) {
-                result = true;
-            }
-        }
-
         //Searching for an Arrival Airport
-        if (result) {
-            result = false;
-            for (Map.Entry<String, Boolean> entry : airportMap.entrySet()) {
-                if (entry.getKey().equals(flight.getArrivalAirport()) && entry.getValue()) {
-                    //arrivalAirportExists= true;
-                    result = true;
-                }
+//        for (Map.Entry<String, Boolean> entry : airportMap.entrySet()) {
+//            if (entry.getKey().equals(flight.getArrivalAirport()) && entry.getValue()) {
+//                //arrivalAirportExists= true;
+//                result = true;
+//            }
+//        }
+        for (String key : airportMap.keySet()) {
+            if (key.equals(flight.getArrivalAirport())) {
+                if(airportMap.get(key))
+                result = true;
             }
         }
         return result;
