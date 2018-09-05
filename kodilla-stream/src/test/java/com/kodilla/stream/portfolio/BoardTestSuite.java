@@ -81,7 +81,7 @@ public class BoardTestSuite {
         //When
         List<TaskList> inProgressionTasks = new ArrayList<>();
         inProgressionTasks.add(new TaskList("In progress"));
-        inProgressionTasks.add(new TaskList("To do"));
+//        inProgressionTasks.add(new TaskList("To do"));
         LocalDate now = now();
         Double result = project.getTaskLists().stream()
                 .filter(inProgressionTasks::contains)
@@ -91,7 +91,7 @@ public class BoardTestSuite {
                 .collect(Collectors.averagingInt(Integer::shortValue))
                 ;
         //Then
-        Assert.assertEquals(14.0, result, 0.1);
+        Assert.assertEquals(10.0, result, 0.1);
     }
     @Test //Test Module 7.6 - Average length of Tasks - using averaging counting values and number of tasks separately
     public void testAddTaskListAverageWorkingOnTaskSeparately() {
