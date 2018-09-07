@@ -1,6 +1,8 @@
-package com.kodilla.good.patterns.challenges;
+package com.kodilla.good.patterns.solid;
 
-public class MailService implements InfoService{
+public class MailService implements InformationService{
+//    private User user;
+
     public MailService() {
     }
     public void sendEmail(User user){

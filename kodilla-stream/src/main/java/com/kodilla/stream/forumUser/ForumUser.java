@@ -9,7 +9,8 @@ public class ForumUser {
     private final LocalDate birthDay;
     private int postsQuantity = 0;
 
-    public ForumUser(final int id, final String name, final char gender, final LocalDate birthDay, int postsQuantity) {
+    public ForumUser(final int id, final String name, final char gender,
+                     final LocalDate birthDay, int postsQuantity) {
         this.id = id;
         this.name = name;
         this.gender = gender;

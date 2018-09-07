@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.challenges;
+package com.kodilla.good.patterns.solid;
 
 public class User {
     private String name;
@@ -16,9 +16,5 @@ public class User {
 
     public String getLastName() {
         return lastName;
-    }
-
-    public int getId() {
-        return id;
     }
 }
