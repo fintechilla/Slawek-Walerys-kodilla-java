@@ -1,4 +1,4 @@
-package com.kodilla.stream.forumUser;
+package com.kodilla.stream.forum;
 
 import java.time.LocalDate;
 
@@ -8,6 +8,8 @@ public class ForumUser {
     private final char gender;
     private final LocalDate birthDay;
     private int postsQuantity = 0;
+
+
 
     public ForumUser(final int id, final String name, final char gender,
                      final LocalDate birthDay, int postsQuantity) {
