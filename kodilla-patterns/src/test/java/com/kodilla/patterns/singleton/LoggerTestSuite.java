@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class LoggerTestSuite {
-    private static Logger logger = new Logger();
+    private static Logger logger ;
     @Test
     public void testLastLog(){
         //Given
