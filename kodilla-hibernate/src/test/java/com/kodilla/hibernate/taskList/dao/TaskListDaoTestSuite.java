@@ -28,7 +28,7 @@ public class TaskListDaoTestSuite {
         System.out.println("Id in found: " + id);
                 //Then
         Assert.assertEquals(1,taskListsFound.size());
-        Assert.assertEquals(true, taskListsFound.get(0).equals(taskList));
+        Assert.assertEquals(taskList, taskListsFound.get(0));
         //Clean up
         taskListDao.delete(taskList);
     }
