@@ -5,7 +5,8 @@ public class ProductOrderApplication {
         OrderRequestRetriever orderRequestRetriever = new OrderRequestRetriever();
         OrderRequest orderRequest = orderRequestRetriever.retrieve();
 
-        OrderProcessor orderProcessor = new OrderProcessor(new MailService(),new ProductOrderService(), new ProductOrderRepository());
+        OrderProcessor orderProcessor = new OrderProcessor(new MailService(),
+                new ProductOrderService(), new ProductOrderRepository());
         orderProcessor.process(orderRequest);
         System.out.println("Transaction done!");
     }

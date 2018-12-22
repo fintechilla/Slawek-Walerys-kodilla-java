@@ -4,14 +4,15 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class LoggerTestSuite {
-    private static Logger logger ;
+    private static Logger logger;
+
     @Test
-    public void testLastLog(){
+    public void testLastLog() {
         //Given
-        logger.getInstance().log("first");
-        logger.getInstance().log("second");
+        Logger.getInstance().log("first");
+        Logger.getInstance().log("second");
         //When
-        String logName = logger.getInstance().getLastLog();
+        String logName = Logger.getInstance().getLastLog();
         System.out.println("Last log: " + logName);
         //Then
         Assert.assertEquals("second", logName);

@@ -1,0 +1,30 @@
+@Test //Test - 4
+    public void testListOfBooksInHandsOfBookUser() {
+        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
+
+        List<Book> expectedResultListOfBooks0 = generateListOfNBooks(0);
+        List<Book> expectedResultListOfBooks5 = generateListOfNBooks(5);
+        List<Book> expectedResultListOfBooks10 = generateListOfNBooks(10);
+
+        LibraryUser libraryUser = new LibraryUser("John","Smith", "12345678");
+
+        when(libraryDatabaseMock.listBooksInHandsOf(libraryUser)).thenReturn(expectedResultListOfBooks0);
+        when(libraryDatabaseMock.listBooksInHandsOf(libraryUser)).thenReturn(expectedResultListOfBooks5);
+        when(libraryDatabaseMock.listBooksInHandsOf(libraryUser)).thenReturn(expectedResultListOfBooks10);
+
+        //When
+        List<Book> resultListOfBooksInHands0 = bookLibrary.listBooksInHandsOf(libraryUser);
+        List<Book> resultListOfBooksInHands5 = bookLibrary.listBooksInHandsOf(libraryUser);
+        List<Book> resultListOfBooksInHands10 = bookLibrary.listBooksInHandsOf(libraryUser);
+
+
+        //Then
+        assertEquals(expectedResultListOfBooks0.size(), resultListOfBooksInHands0.size());
+        assertEquals(expectedResultListOfBooks5.size(), resultListOfBooksInHands5.size());
+        assertEquals(expectedResultListOfBooks10.size(), resultListOfBooksInHands10.size());
+
+        verify(libraryDatabaseMock, timeout(0)).listBooksInHandsOf(any());
+        verify(libraryDatabaseMock, timeout(5)).listBooksInHandsOf(any());
+        verify(libraryDatabaseMock, timeout(10)).listBooksInHandsOf(any());
+    }

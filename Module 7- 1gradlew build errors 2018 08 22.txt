@@ -1,0 +1,31 @@
+
+C:\Users\Slawomir\Documents\Developments\Projects\kodilla-course>gradlew build
+
+> Task :kodilla-testing:test
+
+com.kodilla.testing.library.BookDirectoryTestSuite > testListOfBooksWithFragmentsShorterThan3Characters FAILED
+    java.lang.AssertionError at BookDirectoryTestSuite.java:75
+
+com.kodilla.testing.library.BookDirectoryTestSuite > testListOfBooksInHandsOfBookUser FAILED
+    java.lang.AssertionError at BookDirectoryTestSuite.java:102
+
+32 tests completed, 2 failed
+
+> Task :kodilla-testing:test FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':kodilla-testing:test'.
+> There were failing tests. See the report at: file:///C:/Users/Slawomir/Documents/Developments/Projects/kodilla-course/kodilla-testing/build/reports/test
+s/test/index.html
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 13s
+11 actionable tasks: 6 executed, 5 up-to-date
+
+C:\Users\Slawomir\Documents\Developments\Projects\kodilla-course>

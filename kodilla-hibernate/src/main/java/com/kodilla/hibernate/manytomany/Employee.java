@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NamedQuery(name = "Employee.retrieveEmployeesByName",
-query = "from employees where lastname like :lastName")
-@Entity
+query = "from Employee where lastname like :LAST_NAME")
+@Entity//(name = "employees")
 @Table(name="EMPLOYEES")
 public class Employee {
     private int id;

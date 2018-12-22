@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NamedNativeQuery(name = "Company.retrieveCompaniesByCharacters",
-query = "Select * from companies where substr(lastName, 1, 3) like :partName",
+query = "Select * from companies where substr(company_name, 1, 3) like :PARTNAME",
 resultClass = Company.class)
-@Entity
+@Entity(name="Company")
 @Table(name="COMPANIES")
 public class Company {
     private int id;

@@ -1,7 +1,7 @@
 package com.kodilla.stream;
 
-import com.kodilla.stream.forumUser.Forum;
-import com.kodilla.stream.forumUser.ForumUser;
+import com.kodilla.stream.forum.Forum;
+import com.kodilla.stream.forum.ForumUser;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -26,11 +26,12 @@ public class StreamMain7_3 {
 
         System.out.println("# elements: " + forumUserList.size());
         theResultMapOfForumUserList.entrySet().stream()
-                .map(entry -> "entry: " + entry.getKey()
-                        + " name: " + entry.getValue().getName()
-                        + ", gender: " + entry.getValue().getGender()
-                        + ", Date of birth: " + entry.getValue().getBirthDay()
-                        + ", postsQuantity: " + entry.getValue().getPostsQuantity())
+                .map(m->m.toString())
+//                .map(entry -> "entry: " + entry.getKey()
+//                        + " name: " + entry.getValue().getName()
+//                        + ", gender: " + entry.getValue().getGender()
+//                        + ", Date of birth: " + entry.getValue().getBirthDay()
+//                        + ", postsQuantity: " + entry.getValue().getPostsQuantity())
                 .forEach(System.out::println);
     }
 
