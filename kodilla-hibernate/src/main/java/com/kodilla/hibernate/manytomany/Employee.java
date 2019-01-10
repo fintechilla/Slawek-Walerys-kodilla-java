@@ -1,5 +1,7 @@
 package com.kodilla.hibernate.manytomany;
 
+import org.springframework.stereotype.Repository;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -9,6 +11,7 @@ import java.util.List;
 query = "from Employee where lastname like :LAST_NAME")
 @Entity//(name = "employees")
 @Table(name="EMPLOYEES")
+//@Repository
 public class Employee {
     private int id;
     private String firstName;
