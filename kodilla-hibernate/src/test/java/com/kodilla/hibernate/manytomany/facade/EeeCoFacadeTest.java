@@ -6,24 +6,29 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class EeeCoFacadeTest {
     @Autowired
     EmployeeDto employeeDto;
     //@Autowired
-    CompanyDto companyDto;
+//    CompanyDto companyDto;
     @Autowired
     EeeCoFacade eeeCoFacade;
 
     @Test
-    public void processSearchEeeTest() {
+    public void processSearchEeePartNameTest() {
         //Given
-        eeeCoFacade.processSearchEee("Moller");
-
+        eeeCoFacade.processSearchEeeByPartLastName("iller");
+        eeeCoFacade.processSearchEeeByLastName("Miller");
     }
 
-//    @Test
-//    public void processSearchCo() {
-//    }
+    @Test
+    public void processSearchCompanyByPartName() {
+        //Given
+        eeeCoFacade.processSearchCompanyByName("Data");
+        eeeCoFacade.processSearchCompanyByPartName("Da");
+        eeeCoFacade.processSearchCompanyContaining("Dat");
+    }
 }

@@ -20,11 +20,11 @@ public class EmployeeDto {
     public void addEmployee(Employee employee){
         employeeDao.save(employee);
     }
-    public List<Employee> findEmployee(String lastName){
-        return employeeDao.retrieveEmployeesByName(lastName);
+    public List<Employee> findEmployeeByPartLastName(String partName){
+        return employeeDao.retrieveEmployeesByName("%" + partName + "%");
     }
-    public List<Employee> findEmployeeByPartName(String partName){
-        return employeeDao.retrieveEmployeesByName(partName);
+    public List<Employee> findEmployeeByLastName(String name){
+        return employeeDao.retrieveEmployeesByName(name);
     }
 
 }

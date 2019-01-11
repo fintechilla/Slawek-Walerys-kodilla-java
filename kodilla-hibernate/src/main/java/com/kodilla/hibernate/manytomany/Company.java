@@ -5,10 +5,16 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedNativeQuery(name = "Company.retrieveCompaniesByCharacters",
-query = "Select * from companies where substr(company_name, 1, 3) like :PARTNAME",
-resultClass = Company.class)
-@Entity(name="Company")
+@NamedNativeQueries({
+    @NamedNativeQuery(name="Company.searchCompaniesByName",
+            query="select * from companies where company_name like :COMPANYNAME",
+            resultClass = Company.class),
+
+    @NamedNativeQuery(name = "Company.retrieveCompaniesByCharacters",
+            query = "Select * from companies where substr(company_name, 1, 3) like :PARTNAME",
+            resultClass = Company.class)
+})
+@Entity//(name="Company")
 @Table(name="COMPANIES")
 public class Company {
     private int id;
