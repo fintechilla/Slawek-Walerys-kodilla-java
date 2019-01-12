@@ -14,8 +14,7 @@ import java.util.Date;
                 query = "from Task where duration <= 10")
 })
 @NamedNativeQuery(name = "Task.retrieveTasksWithEnoughTime",
-        query = "select * from tasks" +
-                "where datediff(date_add(created, interval duration day), now()) > 5",
+        query = "select * from tasks where datediff(date_add(created, interval duration day), now()) > 5",
         resultClass = Task.class)
 @Entity
 @Table(name = "Tasks")
