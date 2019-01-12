@@ -11,10 +11,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class EeeCoFacadeTest {
     @Autowired
-    EmployeeDto employeeDto;
-    //@Autowired
-//    CompanyDto companyDto;
-    @Autowired
     EeeCoFacade eeeCoFacade;
 
     @Test

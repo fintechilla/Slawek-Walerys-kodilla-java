@@ -14,7 +14,7 @@ import java.util.List;
             query = "Select * from companies where substr(company_name, 1, 3) like :PARTNAME",
             resultClass = Company.class)
 })
-@Entity//(name="Company")
+@Entity
 @Table(name="COMPANIES")
 public class Company {
     private int id;

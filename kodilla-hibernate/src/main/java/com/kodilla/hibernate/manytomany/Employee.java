@@ -9,9 +9,8 @@ import java.util.List;
 
 @NamedQuery(name = "Employee.retrieveEmployeesByName",
 query = "from Employee where lastname like :LAST_NAME")
-@Entity//(name = "employees")
+@Entity
 @Table(name="EMPLOYEES")
-//@Repository
 public class Employee {
     private int id;
     private String firstName;

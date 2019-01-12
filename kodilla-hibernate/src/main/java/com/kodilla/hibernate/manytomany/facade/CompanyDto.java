@@ -23,7 +23,7 @@ public class CompanyDto {
         return companyDao.retrieveCompaniesByCharacters(name);
     }
     public List<Company> findCompanyByPartName(String name){
-        return companyDao.searchCompaniesByName("%" + name + "%");//name
+        return companyDao.searchCompaniesByName("%" + name + "%");
     }
     public List<Company> findCompanyByNameContaining(String name){
         return companyDao.findAllByNameContaining(name);

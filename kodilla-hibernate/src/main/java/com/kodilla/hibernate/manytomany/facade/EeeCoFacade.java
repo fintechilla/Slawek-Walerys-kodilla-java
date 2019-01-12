@@ -11,10 +11,6 @@ import java.util.List;
 
 @Repository
 public class EeeCoFacade {
-//    @Autowired
-//    CompanyDao companyDao;
-//    @Autowired
-//    EmployeeDao employeeDao;
     @Autowired
     CompanyDto companyDto;
     @Autowired

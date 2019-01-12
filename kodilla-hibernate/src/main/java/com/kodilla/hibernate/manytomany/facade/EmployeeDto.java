@@ -16,13 +16,15 @@ public class EmployeeDto {
     private List<Company>cos = new ArrayList<>();
     @Autowired
     EmployeeDao employeeDao;
-    //@Bean
+
     public void addEmployee(Employee employee){
         employeeDao.save(employee);
     }
+
     public List<Employee> findEmployeeByPartLastName(String partName){
         return employeeDao.retrieveEmployeesByName("%" + partName + "%");
     }
+
     public List<Employee> findEmployeeByLastName(String name){
         return employeeDao.retrieveEmployeesByName(name);
     }
