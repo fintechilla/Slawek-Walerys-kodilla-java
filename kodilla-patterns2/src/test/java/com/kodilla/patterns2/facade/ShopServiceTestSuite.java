@@ -71,6 +71,7 @@ public class ShopServiceTestSuite {
         try{
             orderFacade.processOrder(order, 1L);
         }catch(OrderProcessingException e){
+            System.out.println("Error caught: " + e);
             //business exception - should be handled in real application
         }
     }
