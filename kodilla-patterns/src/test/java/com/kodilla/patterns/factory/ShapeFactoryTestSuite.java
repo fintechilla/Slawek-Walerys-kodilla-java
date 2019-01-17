@@ -10,8 +10,9 @@ public class ShapeFactoryTestSuite {
         ShapeFactory factory = new ShapeFactory();
         //When
         Shape circle = factory.makeShape(ShapeFactory.CIRCLE);
+        System.out.println("circle: " + circle.toString());
         //Then
-        Assert.assertEquals(Math.PI * Math.pow(4.50, 2.0), circle.getArea(), 0);
+        Assert.assertEquals((Math.PI * Math.pow(4.50, 2.0)), circle.getArea(), 0);
         Assert.assertEquals("The rounded circle", circle.getName());
     }
 
@@ -21,6 +22,7 @@ public class ShapeFactoryTestSuite {
         ShapeFactory factory = new ShapeFactory();
         //When
         Shape square = factory.makeShape(ShapeFactory.SQUARE);
+        System.out.println("square: " + square.toString());
         //Then
         Assert.assertEquals(28.0, square.getCircumference(), 0);
         Assert.assertEquals("The angular square", square.getName());
@@ -33,6 +35,7 @@ public class ShapeFactoryTestSuite {
         ShapeFactory factory = new ShapeFactory();
         //When
         Shape rectangle = factory.makeShape(ShapeFactory.RECTANGLE);
+        System.out.println("rectangle: " + rectangle.toString());
         //Then
         Assert.assertEquals(37.5, rectangle.getArea(),0);
         Assert.assertEquals("The long rectangle", rectangle.getName());

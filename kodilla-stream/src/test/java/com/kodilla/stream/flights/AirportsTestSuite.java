@@ -58,7 +58,7 @@ public class AirportsTestSuite {
         //Given
         Airports project = generateAirports();
         //Then
-        Assert.assertEquals(1 , project.getAirportsList().stream()
+        Assert.assertEquals(31 , project.getAirports().stream()
                 .flatMap(x->x.getLocationsOfDestinationsOfDestinations().stream())
         .filter(x->!x.equals("Warsaw"))
         .count()
