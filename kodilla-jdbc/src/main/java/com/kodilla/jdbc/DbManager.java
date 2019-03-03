@@ -8,15 +8,16 @@ import java.util.Properties;
 public class DbManager {
     private Connection conn;
     private static DbManager dbManagerInstance;
+
     private DbManager() throws SQLException {
-        Properties connectionProps = new Properties();
-        connectionProps.put("user", "kodilla_user");
-        connectionProps.put("password", "kodilla_password"); // kodilla_password
+        Properties connectionProps = new Properties();//kodilla_user
+        connectionProps.put("user", "slawek");
+        connectionProps.put("password", "slawek"); // kodilla_password
+        System.out.println(connectionProps.toString());
         System.out.println("In DbManager before setting conn------------------");
         conn = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/kodilla_course?serverTimezone=Europe/Warsaw" +
-                        "&useSSL=False",
-                connectionProps);
+                "jdbc:mysql://localhost:3306/task_crud?serverTimezone=Europe/Warsaw&useSSL=False",
+                connectionProps); //kodilla_course
         //System.out.println("In DbManager - Constructor: " + conn.toString());
     }
     public static DbManager getInstance() throws SQLException{
@@ -27,5 +28,10 @@ public class DbManager {
     }
     public Connection getConnection() {
         return conn;
+    }
+
+    public void closeConnection() throws SQLException {
+        conn.close();
+        System.out.println("Connection closed");
     }
 }
